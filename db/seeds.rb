@@ -5,3 +5,8 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+Project.delete_all
+(1..20).each do |n|
+  Project.create!(code: "#{"%03d" % n}XXX", name: "Sample project #{n}", description: "Description for sample project #{n}")
+end
