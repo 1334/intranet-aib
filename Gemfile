@@ -46,3 +46,5 @@ gem 'capistrano'
 # gem 'ruby-debug19', :require => 'ruby-debug'
 
 gem 'simple_form'
+
+gem 'net-ldap'
