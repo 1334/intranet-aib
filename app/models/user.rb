@@ -11,10 +11,10 @@ class User < ActiveRecord::Base
 
   def self.authenticate(name,password)
     return if password.blank?
-    user = "AIBMAT\\#{name}"
+    user = "#{APP_CONFIG['company_name']}\\#{name}"
     ldap = Net::LDAP.new
-    ldap.host = "192.168.15.2"
-    ldap.port = 636
+    ldap.host = "#{APP_CONFIG['ldap']['address']}"
+    ldap.port = "#{APP_CONFIG['ldap']['port']}"
     ldap.encryption(:simple_tls)
     ldap.auth(user,password)
     if ldap.bind
