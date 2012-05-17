@@ -1,0 +1,12 @@
+# development:
+#  perform_authentication: false
+prova: 'hell yes'
+company_name: AIBMAT
+ldap:
+  address: '192.168.15.2'
+  port: 636
+#test:
+#  perform_authentication: false
+
+#production:
+#  perform_authentication: true
