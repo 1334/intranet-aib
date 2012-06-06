@@ -1,0 +1,4 @@
+<h1><%= @project.name.capitalize  %> Diary</h1>
+<h2><%=t '.title', :default => t('helpers.titles.new', :model => Entry,
+                               :default => "New Enrty") %></h2>
+<%= render :partial => 'form' %>

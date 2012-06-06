@@ -11,3 +11,7 @@
  *= require_self
  *= require_tree .
 */
+
+.debug {
+  margin-top: 60px;
+}

@@ -1,5 +1,6 @@
 class Project < ActiveRecord::Base
   extend FriendlyId
+  has_one :diary
 
   friendly_id :code
 

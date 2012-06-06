@@ -6,7 +6,14 @@ Intranet::Application.routes.draw do
   resources :users
   resources :sessions
 
-  resources :projects
+  resources :projects do
+    resource :diary do
+      resources :entries
+    end
+  end
+
+
+  root :to => 'projects#index'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -59,8 +66,6 @@ Intranet::Application.routes.draw do
   # just remember to delete public/index.html.
   # root :to => 'welcome#index'
  
-  root :to => 'projects#index'
-
   # See how all your routes lay out with "rake routes"
 
   # This is a legacy wild controller route that's not recommended for RESTful applications.

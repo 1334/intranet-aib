@@ -1,0 +1,8 @@
+<% if !@diaries.blank? %>
+  <h1>Diaries goes here</h1>
+  <% @diaries.each do |diary| %>
+    <p><%= diary.project.code  %></p>
+  <% end %>
+<% else -%>
+  <h1>No diaries found</h1>
+<% end %>
