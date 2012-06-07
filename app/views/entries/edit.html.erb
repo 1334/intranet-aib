@@ -2,3 +2,8 @@
 <h2><%=t '.title', :default => t('helpers.titles.new', :model => Entry,
                                :default => "Edit Enrty") %></h2>
 <%= render :partial => 'form' %>
+
+
+<% if @entry.errors.any? -%>
+  <%= @entry.errors.first.inspect %>
+<% end -%>

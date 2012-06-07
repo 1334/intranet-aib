@@ -1,10 +1,11 @@
 class Entry < ActiveRecord::Base
   belongs_to :diary
-  attr_accessible :comments, :date, :responsible, :subject, :entry_type
+  attr_accessible :comments, :date, :responsible, :subject, :entry_type, :attachment
 
   validates :date, presence: true
   validates :subject, presence: true
   validates :responsible, presence: true
+  validates :attachment, attachment_content_type: { content_type: 'application/pdf' }
   
   TYPES = {p_projecte: "Planificacio de Projecte", p_temporal: "Planificacio temporal",
            mod_projectuals: "Modificacions projectuals", rel_colabs: "Relacio amb col.laboradors", 
@@ -15,4 +16,6 @@ class Entry < ActiveRecord::Base
            reunio: "Reunio", altres: "Altres"}
 
   default_scope order: 'entries.date DESC'
+
+  has_attached_file :attachment
 end

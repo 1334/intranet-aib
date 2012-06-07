@@ -8,6 +8,7 @@
       <th class="type_col">Type</th>
       <th class="responsible_col">Responsible</th>
       <th class="subject_col">Subject</th>
+      <th class="subject_col">Attachment</th>
       <th class="actions_col"><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
@@ -18,6 +19,7 @@
         <td><%= Entry::TYPES[entry.entry_type.to_sym] %></td>
         <td><%= entry.responsible %></td>
         <td><%= entry.subject %></td>
+        <td><%= link_to entry.attachment_file_name, entry.attachment.url %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                         edit_project_diary_entry_path(@project,entry), :class => 'btn btn-mini' %>

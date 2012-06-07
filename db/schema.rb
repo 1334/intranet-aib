@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120522161856) do
+ActiveRecord::Schema.define(:version => 20120606113857) do
 
   create_table "diaries", :force => true do |t|
     t.integer  "project_id"
@@ -28,8 +28,12 @@ ActiveRecord::Schema.define(:version => 20120522161856) do
     t.string   "responsible"
     t.string   "subject"
     t.text     "comments"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",              :null => false
+    t.datetime "updated_at",              :null => false
+    t.string   "attachment_file_name"
+    t.string   "attachment_content_type"
+    t.integer  "attachment_file_size"
+    t.datetime "attachment_updated_at"
   end
 
   add_index "entries", ["diary_id"], :name => "index_entries_on_diary_id"
