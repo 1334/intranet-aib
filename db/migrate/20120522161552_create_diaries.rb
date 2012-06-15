@@ -1,10 +1,10 @@
 class CreateDiaries < ActiveRecord::Migration
   def change
     create_table :diaries do |t|
-      t.references :project
+      t.references :trackable, polymorphic: true
 
       t.timestamps
     end
-    add_index :diaries, :project_id
+    add_index :diaries, :trackable_id
   end
 end

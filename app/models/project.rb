@@ -1,6 +1,6 @@
 class Project < ActiveRecord::Base
   extend FriendlyId
-  has_one :diary
+  has_one :diary, as: :trackable
 
   friendly_id :code
 
