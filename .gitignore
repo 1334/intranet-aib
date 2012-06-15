@@ -17,4 +17,4 @@
 /config/database.yml
 /tags
 *.swp
-/public/system/*
+/public/attachments/*
