@@ -25,16 +25,12 @@ class ProjectsController < ApplicationController
   # GET /projects/new.json
   def new
     @project = Project.new
+    3.times { @project.collaborations.build }
 
     # respond_to do |format|
     #   format.html # new.html.erb
     #   format.json { render json: @project }
     # end
-  end
-
-  # GET /projects/1/edit
-  def edit
-    @project = Project.find(params[:id])
   end
 
   # POST /projects
@@ -53,6 +49,11 @@ class ProjectsController < ApplicationController
         # format.json { render json: @project.errors, status: :unprocessable_entity }
       end
     # end
+  end
+
+  # GET /projects/1/edit
+  def edit
+    @project = Project.find(params[:id])
   end
 
   # PUT /projects/1

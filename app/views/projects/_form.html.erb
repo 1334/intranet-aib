@@ -2,6 +2,15 @@
   <%= f.input :code %>
   <%= f.input :name %>
   <%= f.input :description %>
+
+  <%= f.simple_fields_for :collaborations do |cf| %>
+    <fieldset class="collaborations">
+      <%= cf.input :participant_name, input_html: { data: { autocomplete_source: Participant.order(:name).map(&:name) } } %>
+      <%= cf.input :role %>
+    </fieldset>
+  <% end %>
+
+
   <div class="form-actions">
     <%= f.button :submit, :class => 'btn btn-primary' %>
     <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
