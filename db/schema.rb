@@ -11,7 +11,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120606113857) do
+ActiveRecord::Schema.define(:version => 20120620090322) do
+
+  create_table "collaborations", :force => true do |t|
+    t.integer  "project_id"
+    t.integer  "participant_id"
+    t.string   "role"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+  end
+
+  add_index "collaborations", ["participant_id"], :name => "index_collaborations_on_participant_id"
+  add_index "collaborations", ["project_id"], :name => "index_collaborations_on_project_id"
 
   create_table "diaries", :force => true do |t|
     t.integer  "trackable_id"
@@ -38,6 +49,12 @@ ActiveRecord::Schema.define(:version => 20120606113857) do
   end
 
   add_index "entries", ["diary_id"], :name => "index_entries_on_diary_id"
+
+  create_table "participants", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "projects", :force => true do |t|
     t.string   "code"
