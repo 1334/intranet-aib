@@ -5,6 +5,13 @@ gem 'rails', '3.2.6'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
+group :development do
+  gem 'pry'
+  gem 'pry-nav'
+  gem 'pry-stack_explorer'
+end
+
+
 group :development, :test do
   gem 'sqlite3'
   gem 'rspec-rails'
