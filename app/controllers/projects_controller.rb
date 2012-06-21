@@ -24,8 +24,8 @@ class ProjectsController < ApplicationController
   # GET /projects/new
   # GET /projects/new.json
   def new
-    @project = Project.new
-    Collaboration::ROLES.each { |name| @project.collaborations.build(role: name) }
+    @project = default_values(Project.new)
+    @project.collaborations.build
 
     # respond_to do |format|
     #   format.html # new.html.erb
@@ -82,5 +82,12 @@ class ProjectsController < ApplicationController
       format.html { redirect_to projects_url }
       format.json { head :no_content }
     end
+  end
+
+private
+
+  def default_values(project)
+    project.started_at = Time.now.year
+    project
   end
 end

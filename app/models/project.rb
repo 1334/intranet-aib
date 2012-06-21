@@ -6,11 +6,11 @@ class Project < ActiveRecord::Base
 
   friendly_id :code
 
-  attr_accessible :code, :description, :name, :collaborations_attributes
+  attr_accessible :code, :name, :description, :status, :commission, :address, :city, :state, :country, :started_at, :ended_at, :gfa, :exterior_area, :budget, :collaborations_attributes
 
   accepts_nested_attributes_for :collaborations
   
-  validates :code, code_format: true
+  validates :code, code_format: true, presence: true
   validates :name, presence: true
-  validates :code, presence: true
+
 end

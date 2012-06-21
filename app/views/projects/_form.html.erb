@@ -2,6 +2,17 @@
   <%= f.input :code %>
   <%= f.input :name %>
   <%= f.input :description %>
+  <%= f.input :status %>
+  <%= f.input :commission %>
+  <%= f.input :address %>
+  <%= f.input :city %>
+  <%= f.input :state %>
+  <%= f.input :country, as: :string %>
+  <%= f.input :started_at, as: :string %>
+  <%= f.input :ended_at, as: :string %>
+  <%= f.input :gfa, label: "Gross Floor Area" %>
+  <%= f.input :exterior_area %>
+  <%= f.input :budget %>
 
   <%= f.simple_fields_for :collaborations do |cf| %>
     <fieldset class="collaborations">
@@ -9,7 +20,8 @@
       <%= cf.input :role, collection: Collaboration::ROLES %>
     </fieldset>
   <% end %>
-
+  
+  <%= link_to "(+) Add Participant", "#", class: "add_participant" %>
 
   <div class="form-actions">
     <%= f.button :submit, :class => 'btn btn-primary' %>
