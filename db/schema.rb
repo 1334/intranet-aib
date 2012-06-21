@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120620090322) do
+ActiveRecord::Schema.define(:version => 20120621151914) do
 
   create_table "collaborations", :force => true do |t|
     t.integer  "project_id"
@@ -60,8 +60,19 @@ ActiveRecord::Schema.define(:version => 20120620090322) do
     t.string   "code"
     t.string   "name"
     t.text     "description"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+    t.string   "status"
+    t.string   "commission"
+    t.string   "address"
+    t.string   "city"
+    t.string   "state"
+    t.string   "country"
+    t.date     "started_at"
+    t.date     "ended_at"
+    t.decimal  "gfa"
+    t.decimal  "exterior_area"
+    t.decimal  "budget"
   end
 
   add_index "projects", ["code"], :name => "index_projects_on_code"

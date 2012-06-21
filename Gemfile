@@ -21,7 +21,7 @@ end
 group :test do
   gem 'capybara'
   gem 'factory_girl_rails'
-  gem 'cucumber-rails'
+  gem 'cucumber-rails', require: false
   gem 'database_cleaner'
   gem 'guard-spork'
   gem 'spork'
