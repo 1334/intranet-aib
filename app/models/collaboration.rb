@@ -4,6 +4,7 @@ class Collaboration < ActiveRecord::Base
 
   attr_accessible :role, :participant_name
 
+  ROLES = [:coauthor, :colaborator, :client, :promoter, :builder]
 
   def participant_name
     participant.try(:name)
