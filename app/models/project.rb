@@ -1,7 +1,7 @@
 class Project < ActiveRecord::Base
   extend FriendlyId
   has_one :diary, as: :trackable
-  has_many :collaborations
+  has_many :collaborations, dependent: :destroy
   has_many :participants, through: :collaborations
 
   friendly_id :code
@@ -13,4 +13,6 @@ class Project < ActiveRecord::Base
   validates :code, code_format: true, presence: true
   validates :name, presence: true
 
+  STATUS = [:competition, :predesign, :sechematic_design, :design_devlopment, :final_design, :building, :built]
+  COMMISSION = [:public, :private]
 end

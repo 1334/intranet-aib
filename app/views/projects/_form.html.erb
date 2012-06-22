@@ -1,9 +1,9 @@
 <%= simple_form_for @project, :html => { :class => 'form-horizontal' }, :defaults => { :input_html => { :class => 'span4'  }  } do |f| %>
   <%= f.input :code %>
   <%= f.input :name %>
-  <%= f.input :description %>
-  <%= f.input :status %>
-  <%= f.input :commission %>
+  <%= f.input :description, input_html: { rows: 3 } %>
+  <%= f.input :status, collection: Project::STATUS %>
+  <%= f.input :commission, collection: Project::COMMISSION %>
   <%= f.input :address %>
   <%= f.input :city %>
   <%= f.input :state %>

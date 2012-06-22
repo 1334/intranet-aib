@@ -68,4 +68,4 @@ gem 'net-ldap'
 gem 'friendly_id'
 gem 'paperclip'
 
-# gem 'mysql2'
+gem 'mysql2', group: :development
