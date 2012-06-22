@@ -1,7 +1,8 @@
 jQuery ->
-  $(".alert a.close").click ->
-    $('.alert a.close').parent().slideUp('slow')
-    return false 
+  $(".alert a.close").bind 'click', (event) ->
+    $(this).parent().slideUp('slow')
+    event.preventDefault()
+    false
 
   $("input.datepicker").each (i) ->
     $(this).datepicker

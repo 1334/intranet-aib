@@ -1,0 +1,4 @@
+<fieldset class='collaborations'>
+  <%= f.input :participant_name, input_html: { data: { autocomplete_source: Participant.order(:name).map(&:name) }, class: 'span4' }, label: 'Participant' %>
+  <%= f.input :role, collection: Collaboration::ROLES, input_html: { class: 'span4' } %>
+</fieldset>

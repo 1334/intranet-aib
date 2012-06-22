@@ -8,7 +8,7 @@ class Project < ActiveRecord::Base
 
   attr_accessible :code, :name, :description, :status, :commission, :address, :city, :state, :country, :started_at, :ended_at, :gfa, :exterior_area, :budget, :collaborations_attributes
 
-  accepts_nested_attributes_for :collaborations
+  accepts_nested_attributes_for :collaborations, reject_if: proc { |attributes| attributes['participant_name'].blank? }
   
   validates :code, code_format: true, presence: true
   validates :name, presence: true
