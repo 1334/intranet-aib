@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  has_many :timesheets
   attr_accessible :email, :name, :password
   
   before_create { generate_token(:auth_token) }

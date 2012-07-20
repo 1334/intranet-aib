@@ -11,6 +11,8 @@ Intranet::Application.routes.draw do
       resources :entries
     end
   end
+  
+  match 'timesheets/:year/:month' => 'timesheets#show'
 
 
   root :to => 'projects#index'
