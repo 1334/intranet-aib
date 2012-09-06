@@ -2,9 +2,9 @@ require 'spec_helper'
 
 describe TimesheetsController do
 
-  describe "GET 'show'" do
+  describe "GET 'new'" do
     it "returns http success" do
-      get 'show'
+      get 'new'
       response.should be_success
     end
   end

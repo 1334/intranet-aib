@@ -12,8 +12,9 @@ Intranet::Application.routes.draw do
     end
   end
   
-  match 'timesheets/:year/:month' => 'timesheets#show'
-
+  scope 'timesheets/:year/:month' do
+    resources :timesheets, path: ""
+  end
 
   root :to => 'projects#index'
 

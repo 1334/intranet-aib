@@ -4,6 +4,8 @@ ca:
   #   errors:
   #     <<: *errors
   activerecord:
+    models:
+      project: "Projecte"
     attributes:
       project: 
         code: "Codi"
@@ -161,12 +163,16 @@ ca:
     links:
       edit: "Editar"
       destroy: "Eliminar"
+      cancel: "Cancelar"
     select:
       prompt: Si us plau tria
     submit:
       create: Crear %{model}
       submit: Guardar %{model}
       update: Actualizar %{model}
+    titles:
+      new: Nou %{model}
+      edit: Editar %{model}
   number:
     currency:
       format:
