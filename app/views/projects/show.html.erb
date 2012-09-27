@@ -1,18 +1,8 @@
 <%- model_class = @project.class -%>
-<h1><%=t '.title', :default => model_class.model_name.human %> </h1>
+<%# <h1><%=t '.title', :default => model_class.model_name.human %1> </h1> %>
+<h1><%= @project.name %></h1>
+<h2><%= @project.description %></h2>
 <h3><%= link_to (@project.diary ? "Diary" : "Create Diary"), project_diary_path(@project) %></h3>
-<p>
-  <strong><%= model_class.human_attribute_name(:code) %>:</strong><br>
-  <%= @project.code %>
-</p>
-<p>
-  <strong><%= model_class.human_attribute_name(:name) %>:</strong><br>
-  <%= @project.name %>
-</p>
-<p>
-  <strong><%= model_class.human_attribute_name(:description) %>:</strong><br>
-  <%= @project.description %>
-</p>
 
 <div class="form-actions">
   <%= link_to t('.back', :default => t("helpers.links.back")),

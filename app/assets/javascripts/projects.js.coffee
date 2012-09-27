@@ -4,7 +4,7 @@
 
 jQuery ->
   $('input[id*="participant_name"]').autocomplete
-    source: $('input[id*="participant_name"]').data('autocomplete-source')
+    source: $('#colab_name').data('autocomplete-source')
 
   $('form').on 'click', '.add_fields', (event) ->
     time = new Date().getTime()

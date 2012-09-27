@@ -14,6 +14,8 @@
   <%= f.input :exterior_area %>
   <%= f.input :budget %>
 
+  <%= hidden_field_tag :colab_name, nil, data: { autocomplete_source: Participant.order(:name).map(&:name) } %>
+
   <%= f.simple_fields_for :collaborations do |cf| %>
     <%= render 'collaboration_fields', f: cf %>
   <% end %>
