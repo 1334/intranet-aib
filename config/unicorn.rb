@@ -1,4 +1,4 @@
-root = "/home/deploy/apps/intranet/current"
+root = "/home/deployer/apps/intranet-aib/current"
 working_directory root
 pid "#{root}/tmp/pids/unicorn.pid"
 stderr_path "#{root}/log/unicorn.log"

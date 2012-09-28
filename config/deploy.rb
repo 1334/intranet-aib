@@ -1,9 +1,9 @@
 require "bundler/capistrano"
 
-server "192.168.15.5", :web, :app, :db, primary: true
+server "69.55.49.24", :web, :app, :db, primary: true
 
 set :application, "intranet-aib"
-set :user, "deploy"
+set :user, "deployer"
 set :deploy_to, "/home/#{user}/apps/#{application}"
 set :deploy_via, :remote_cache
 set :use_sudo, false
