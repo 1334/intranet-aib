@@ -3,8 +3,9 @@
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 
 jQuery ->
-  $('input[id*="participant_name"]').autocomplete
-    source: $('#colab_name').data('autocomplete-source')
+  $(document).on 'keydown', 'input[name*="participant_name"]', (event) ->
+    $(this).autocomplete
+      source: $('#colab_name').data('autocomplete-source')
 
   $('form').on 'click', '.add_fields', (event) ->
     time = new Date().getTime()
