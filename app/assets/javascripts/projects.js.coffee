@@ -3,7 +3,7 @@
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 
 jQuery ->
-  $(document).on 'keydown', 'input[name*="participant_name"]', (event) ->
+  $('form').on 'keydown', 'input[name*="participant_name"]', ->
     $(this).autocomplete
       source: $('#colab_name').data('autocomplete-source')
 
