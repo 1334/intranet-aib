@@ -10,3 +10,8 @@ Project.delete_all
 (1..20).each do |n|
   Project.create!(code: "#{"%03d" % n}XXX", name: "Sample project #{n}", description: "Description for sample project #{n}")
 end
+
+Participant.delete_all
+["BCN, SLP", "Estudi PSP Arquitectura", "Juan Azulay"].each do |n|
+  Participant.create!(name: n)
+end
