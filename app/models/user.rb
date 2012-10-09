@@ -18,13 +18,9 @@ class User < ActiveRecord::Base
     ldap.encryption(:simple_tls)
     ldap.auth(user,password)
     if ldap.bind
-      self.user(name)
+      User.find_by_name(name) || User.create(name: name, email: "#{name}@aib.cat")
     else
       false
     end
-  end
-
-  def self.user(name)
-    user = User.find_by_name(name) || User.create(name: name, email: "#{name}@aib.cat")
   end
 end
