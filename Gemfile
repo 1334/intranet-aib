@@ -14,18 +14,8 @@ end
 
 group :development, :test do
   gem 'sqlite3'
-  gem 'rspec-rails'
-  gem 'guard-rspec'
-end
-
-group :test do
-  gem 'capybara'
-  gem 'factory_girl_rails'
-  gem 'cucumber-rails', require: false
-  gem 'database_cleaner'
-  gem 'guard-spork'
-  gem 'spork'
-  gem 'launchy'
+  gem 'minitest-rails'
+  gem 'minitest-rails-capybara'
 end
 
 group :production do
