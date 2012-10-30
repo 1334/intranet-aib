@@ -62,6 +62,13 @@ GEM
       multi_json (~> 1.0)
     ffi (1.1.5)
     friendly_id (4.0.8)
+    guard (1.5.2)
+      listen (>= 0.4.2)
+      lumberjack (>= 1.0.2)
+      pry (>= 0.9.10)
+      thor (>= 0.14.6)
+    guard-minitest (0.5.0)
+      guard (>= 0.4)
     highline (1.6.15)
     hike (1.2.1)
     i18n (0.6.1)
@@ -80,6 +87,8 @@ GEM
     libv8 (3.3.10.4)
     libwebsocket (0.1.5)
       addressable
+    listen (0.5.3)
+    lumberjack (1.0.2)
     mail (2.4.4)
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
@@ -149,6 +158,9 @@ GEM
       thor (>= 0.14.6, < 2.0)
     raindrops (0.10.0)
     rake (0.9.2.2)
+    rb-fsevent (0.9.2)
+    rb-inotify (0.8.8)
+      ffi (>= 0.5.0)
     rdoc (3.12)
       json (~> 1.4)
     rubyzip (0.9.9)
@@ -201,6 +213,7 @@ DEPENDENCIES
   capistrano
   coffee-rails (~> 3.2.1)
   friendly_id
+  guard-minitest
   jquery-rails
   minitest-rails
   minitest-rails-capybara
@@ -211,6 +224,8 @@ DEPENDENCIES
   pry-nav
   pry-stack_explorer
   rails (= 3.2.8)
+  rb-fsevent
+  rb-inotify
   sass-rails (~> 3.2.3)
   simple_form
   sqlite3
