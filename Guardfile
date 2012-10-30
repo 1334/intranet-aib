@@ -3,7 +3,7 @@
 
 guard 'minitest' do
   # with Minitest::Unit
-  watch(%r|^test/(.*)/(.*)\.rb|)     
+  watch(%r|^test/(.*)/(.*)\.rb|) 
   watch(%r|^lib/(.*)([^/]+)\.rb|)     { |m| "test/#{m[1]}test_#{m[2]}.rb" }
   watch(%r|^test/test_helper\.rb|)    { "test" }
 
@@ -22,3 +22,4 @@ guard 'minitest' do
   # watch(%r|^app/helpers/(.*)\.rb|)     { |m| "test/helpers/#{m[1]}_test.rb" }
   # watch(%r|^app/models/(.*)\.rb|)      { |m| "test/unit/#{m[1]}_test.rb" }  
 end
+

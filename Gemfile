@@ -16,6 +16,9 @@ group :development, :test do
   gem 'sqlite3'
   gem 'minitest-rails'
   gem 'minitest-rails-capybara'
+end
+
+group :development do
   gem 'rb-inotify', require: false 
   gem 'rb-fsevent', require: false
   gem 'guard-minitest'
