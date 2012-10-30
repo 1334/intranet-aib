@@ -7,15 +7,26 @@ class Entry < ActiveRecord::Base
   validates :responsible, presence: true
   validates :attachment, attachment_content_type: { content_type: 'application/pdf' }
   
-  TYPES = {p_projecte: "Planificacio de Projecte", p_temporal: "Planificacio temporal",
-           mod_projectuals: "Modificacions projectuals", rel_colabs: "Relacio amb col.laboradors", 
-           verif_lliurament: "Verificacio lliurament col.laborador", rel_client: "Relacio amb el client", 
-           mod_contractuals: "Modificacions contracturals", rev_projecte: "Revisio projecte", 
-           verif_projecte: "Verificacio projecte", valid_projecte: "Validacio projecte", 
-           lliurament: "Lliurament", punts_critics: "Punts critics", no_conformitat: "No conformitat", 
-           reunio: "Reunio", altres: "Altres"}
-
   default_scope order: 'entries.date DESC'
 
   has_attached_file :attachment
+
+  TYPES = { 
+    p_projecte: "Planificacio de Projecte",
+    p_temporal: "Planificacio temporal",
+    mod_projectuals: "Modificacions projectuals",
+    rel_colabs: "Relacio amb col.laboradors", 
+    verif_lliurament: "Verificacio lliurament col.laborador",
+    rel_client: "Relacio amb el client",
+    mod_contractuals: "Modificacions contracturals",
+    rev_projecte: "Revisio projecte", 
+    verif_projecte: "Verificacio projecte",
+    valid_projecte: "Validacio projecte",
+    lliurament: "Lliurament",
+    punts_critics: "Punts critics",
+    no_conformitat: "No conformitat", 
+    reunio: "Reunio",
+    altres: "Altres"
+  }
+
 end
