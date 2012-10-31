@@ -21,6 +21,7 @@ end
 group :development do
   gem 'rb-inotify', require: false 
   gem 'rb-fsevent', require: false
+  gem 'growl', require: false if RUBY_PLATFORM.downcase.include?("darwin")
   gem 'guard-minitest'
 end
 
