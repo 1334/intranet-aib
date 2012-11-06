@@ -5,7 +5,7 @@ require "minitest/autorun"
 require "minitest/rails"
 
 # Uncomment if you want Capybara in accceptance/integration tests
-# require "minitest/rails/capybara"
+require "minitest/rails/capybara"
 
 # Uncomment if you want awesome colorful output
 # require "minitest/pride"
