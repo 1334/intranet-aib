@@ -8,4 +8,7 @@ class Timesheet < ActiveRecord::Base
   validates_presence_of :user_id
   validates_presence_of :date
 
+  def daily_hours
+    @daily_hours || []
+  end
 end
