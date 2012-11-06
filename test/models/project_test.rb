@@ -1,7 +1,12 @@
 require 'minitest_helper'
 
 class ProjectTest < MiniTest::Rails::ActiveSupport::TestCase
-  def test_it_responds_to_methods
+  test "valid fixture is valid" do
+    project = projects(:valid)
+    assert project.valid?
+  end
+
+  test "it responds to given methods" do
     project = Project.new
 
     assert project.respond_to?(:code)
@@ -19,11 +24,4 @@ class ProjectTest < MiniTest::Rails::ActiveSupport::TestCase
     assert project.respond_to?(:exterior_area)
     assert project.respond_to?(:budget)
   end
-
-  def test_valid_fixture_is_valid
-    project = projects(:valid)
-    assert project.valid?
-  end
-
 end
-
