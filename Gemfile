@@ -26,7 +26,7 @@ group :development do
 end
 
 group :production do
-  gem 'pg', group: :production
+  gem 'mysql2'
 end
 
 # Gems used only for assets and not required
@@ -52,10 +52,10 @@ gem 'jquery-rails'
 # gem 'jbuilder'
 
 # Use unicorn as the app server
-gem 'unicorn'
+# gem 'unicorn'
 
 # Deploy with Capistrano
-gem 'capistrano'
+# gem 'capistrano'
 
 # To use debugger
 # gem 'ruby-debug19', :require => 'ruby-debug'
