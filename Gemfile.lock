@@ -56,6 +56,10 @@ GEM
       multi_json (~> 1.0)
     ffi (1.1.5)
     friendly_id (4.0.8)
+    globalize3 (0.2.0)
+      activemodel (>= 3.0.0)
+      activerecord (>= 3.0.0)
+      paper_trail (~> 2)
     guard (1.5.2)
       listen (>= 0.4.2)
       lumberjack (>= 1.0.2)
@@ -96,6 +100,9 @@ GEM
     mysql2 (0.3.11)
     net-ldap (0.3.1)
     nokogiri (1.5.5)
+    paper_trail (2.6.4)
+      activerecord (~> 3.0)
+      railties (~> 3.0)
     paperclip (3.2.0)
       activemodel (>= 3.0.0)
       activerecord (>= 3.0.0)
@@ -178,6 +185,7 @@ DEPENDENCIES
   bootstrap-sass
   coffee-rails (~> 3.2.1)
   friendly_id
+  globalize3
   guard-minitest
   jquery-rails
   minitest-rails

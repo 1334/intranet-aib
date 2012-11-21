@@ -64,5 +64,4 @@ gem 'simple_form'
 gem 'net-ldap'
 gem 'friendly_id'
 gem 'paperclip'
-
-# gem 'mysql2', group: :development
+gem 'globalize3'
