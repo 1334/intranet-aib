@@ -34,4 +34,9 @@ class TimesheetTest < MiniTest::Rails::ActiveSupport::TestCase
   test "new records have daily_hours initialized as array" do
     assert_kind_of Array, Timesheet.new.daily_hours
   end
+
+  test "new records have daily_hours initialized with proper values" do
+    a = Array.new(32,0.0)
+    assert_equal a, Timesheet.new.daily_hours
+  end
 end
