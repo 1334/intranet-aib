@@ -18,7 +18,9 @@ class ProjectsController < ApplicationController
 
     respond_to do |format|
       format.html # show.html.erb
-      format.json { render json: @project }
+      format.json { render json: @project.to_json(include: { collaborations: { include: :participant } }) }
+      # format.json { render json: @project, include: [:collaborations, :participants]  }
+      # format.json { render json: @project }
       # format.xml { render xml: @project }
     end
   end
