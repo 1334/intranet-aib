@@ -10,6 +10,7 @@ class Timesheet < ActiveRecord::Base
   validates_presence_of :user_id
   validates_presence_of :date
 
+<<<<<<< HEAD
   serialize :daily_hours
 
   private
@@ -20,5 +21,9 @@ class Timesheet < ActiveRecord::Base
 
   def init_daily_hours_array
     Array.new(32,0.0)
+=======
+  def daily_hours
+    @daily_hours || []
+>>>>>>> c01ab9b996749b48595974fb4314e410426f4c57
   end
 end

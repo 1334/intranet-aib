@@ -26,7 +26,7 @@ group :development do
 end
 
 group :production do
-  gem 'pg', group: :production
+  gem 'mysql2'
 end
 
 # Gems used only for assets and not required
@@ -40,7 +40,7 @@ group :assets do
 
   gem 'uglifier', '>= 1.0.3'
 
-  gem 'twitter-bootstrap-rails'
+  gem 'bootstrap-sass'
 end
 
 gem 'jquery-rails'
@@ -52,10 +52,10 @@ gem 'jquery-rails'
 # gem 'jbuilder'
 
 # Use unicorn as the app server
-gem 'unicorn'
+# gem 'unicorn'
 
 # Deploy with Capistrano
-gem 'capistrano'
+# gem 'capistrano'
 
 # To use debugger
 # gem 'ruby-debug19', :require => 'ruby-debug'
@@ -64,5 +64,4 @@ gem 'simple_form'
 gem 'net-ldap'
 gem 'friendly_id'
 gem 'paperclip'
-
-# gem 'mysql2', group: :development
+gem 'globalize3'
