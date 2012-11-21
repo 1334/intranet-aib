@@ -1,21 +1,24 @@
 Intranet::Application.routes.draw do
 
-  resources :timesheets
+  scope ":locale", locale: /#{I18n.available_locales.join("|")}/ do
+    root :to => 'projects#index'
 
-  get 'login', to: 'sessions#new', as: 'login'
-  get 'logout', to: 'sessions#destroy', as: 'logout'
+    resources :timesheets
 
-  resources :users
-  resources :sessions
+    get 'login', to: 'sessions#new', as: 'login'
+    get 'logout', to: 'sessions#destroy', as: 'logout'
 
-  resources :projects do
-    resource :diary do
-      resources :entries
+    resources :users
+    resources :sessions
+
+    resources :projects do
+      resource :diary do
+        resources :entries
+      end
     end
   end
 
-
-  root :to => 'projects#index'
+  match '', to: redirect("/#{I18n.locale}")
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

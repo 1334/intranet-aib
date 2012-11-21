@@ -2,6 +2,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
 
   before_filter :authorize, except: [:login, :index, :show]
+  before_filter :set_locale
 
   private
 
@@ -14,4 +15,14 @@ class ApplicationController < ActionController::Base
   def authorize
     redirect_to login_url, alert: "Not authorized" if current_user.nil?
   end
+
+  def set_locale
+    I18n.locale = params[:locale] if params[:locale].present?
+  end
+
+  def default_url_options(options={})
+      # logger.debug "default_url_options is passed options: #{options.inspect}\n"
+      { :locale => I18n.locale  }
+  end
+
 end
