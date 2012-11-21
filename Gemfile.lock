@@ -56,14 +56,11 @@ GEM
       multi_json (~> 1.0)
     ffi (1.1.5)
     friendly_id (4.0.8)
-<<<<<<< HEAD
-    growl (1.0.3)
-=======
     globalize3 (0.2.0)
       activemodel (>= 3.0.0)
       activerecord (>= 3.0.0)
       paper_trail (~> 2)
->>>>>>> c01ab9b996749b48595974fb4314e410426f4c57
+    growl (1.0.3)
     guard (1.5.2)
       listen (>= 0.4.2)
       lumberjack (>= 1.0.2)
@@ -189,11 +186,8 @@ DEPENDENCIES
   bootstrap-sass
   coffee-rails (~> 3.2.1)
   friendly_id
-<<<<<<< HEAD
-  growl
-=======
   globalize3
->>>>>>> c01ab9b996749b48595974fb4314e410426f4c57
+  growl
   guard-minitest
   jquery-rails
   minitest-rails

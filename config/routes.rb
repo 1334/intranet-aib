@@ -1,6 +1,6 @@
 Intranet::Application.routes.draw do
 
-  scope ":locale", locale: /#{I18n.available_locales.join("|")}/ do
+  scope "(:locale)", locale: /#{I18n.available_locales.join("|")}/ do
     root :to => 'projects#index'
 
     resources :timesheets
@@ -17,8 +17,6 @@ Intranet::Application.routes.draw do
       end
     end
   end
-
-  match '', to: redirect("/#{I18n.locale}")
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
