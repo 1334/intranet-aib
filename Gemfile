@@ -65,3 +65,4 @@ gem 'net-ldap'
 gem 'friendly_id'
 gem 'paperclip'
 gem 'globalize3'
+gem 'mysql2', require: false
