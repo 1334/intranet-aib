@@ -60,6 +60,7 @@ GEM
       activemodel (>= 3.0.0)
       activerecord (>= 3.0.0)
       paper_trail (~> 2)
+    growl (1.0.3)
     guard (1.5.2)
       listen (>= 0.4.2)
       lumberjack (>= 1.0.2)
@@ -186,6 +187,7 @@ DEPENDENCIES
   coffee-rails (~> 3.2.1)
   friendly_id
   globalize3
+  growl
   guard-minitest
   jquery-rails
   minitest-rails
