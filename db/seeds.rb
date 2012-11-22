@@ -7,16 +7,6 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-Project.delete_all
-1.upto(20).each do |n|
-  I18n.locale = :ca
-  p=Project.create!(code: "#{"%03d" % n}XXX", name: "Projecte d'exemple número #{n}", description: "Description for sample project #{n}")
-  I18n.locale = :en
-  p.name = "Sample project #{n}"
-  p.save
-end
+require_relative '../lib/db_import'
 
-Participant.delete_all
-["BCN, SLP", "Estudi PSP Arquitectura", "Juan Azulay"].each do |n|
-  Participant.create!(name: n)
-end
+AiB::DBImport.new.insert_data!

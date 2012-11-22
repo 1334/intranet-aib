@@ -16,6 +16,7 @@
 
 /config/database.yml
 /config/config.yml
+/lib/connection.yml
 /tags
 *.swp
 /public/attachments/*
