@@ -1,7 +1,11 @@
 class DiariesController < ApplicationController
   def show
-    project = Project.find(params[:project_id])
-    @diary = project.diary || project.create_diary!
+    Project.find(params[:project_id]).diary 
+    redirect_to project_diary_entries_path
+  end
+
+  def new
+    Project.find(params[:project_id]).create_diary!
     redirect_to project_diary_entries_path
   end
 end
