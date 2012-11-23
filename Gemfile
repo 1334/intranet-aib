@@ -11,9 +11,9 @@ group :development do
   gem 'pry-stack_explorer'
 end
 
+gem 'sqlite3'
 
 group :development, :test do
-  gem 'sqlite3'
   gem 'minitest-rails'
   gem 'minitest-rails-capybara'
 end
@@ -23,10 +23,6 @@ group :development do
   gem 'rb-fsevent', require: false
   gem 'growl', require: false if RUBY_PLATFORM.downcase.include?("darwin")
   gem 'guard-minitest'
-end
-
-group :production do
-  gem 'mysql2'
 end
 
 # Gems used only for assets and not required
