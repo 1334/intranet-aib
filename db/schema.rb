@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121121113012) do
+ActiveRecord::Schema.define(:version => 20121123112659) do
 
   create_table "collaborations", :force => true do |t|
     t.integer  "project_id"
@@ -85,6 +85,7 @@ ActiveRecord::Schema.define(:version => 20121121113012) do
     t.decimal  "gfa"
     t.decimal  "exterior_area"
     t.decimal  "budget"
+    t.boolean  "published"
   end
 
   add_index "projects", ["code"], :name => "index_projects_on_code"

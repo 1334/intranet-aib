@@ -6,7 +6,7 @@ class ProjectsController < ApplicationController
     
     respond_to do |format|
       format.html # index.html.erb
-      format.json { render json: @projects.to_json(only: [:code, :name]) }
+      format.json { render json: Project.published.to_json(only: [:code, :name]) }
     end
   end
 

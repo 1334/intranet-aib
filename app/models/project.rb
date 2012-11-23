@@ -8,7 +8,7 @@ class Project < ActiveRecord::Base
   
   translates :name, :description
 
-  attr_accessible :code, :name, :description, :status, :commission, :address, :city, :state, :country, :started_at, :ended_at, :gfa, :exterior_area, :budget, :collaborations_attributes
+  attr_accessible :code, :name, :description, :status, :commission, :address, :city, :state, :country, :started_at, :ended_at, :gfa, :exterior_area, :budget, :published, :collaborations_attributes
 
   accepts_nested_attributes_for :collaborations, reject_if: proc { |attributes| attributes['participant_name'].blank? }
   accepts_nested_attributes_for :translations
@@ -18,6 +18,10 @@ class Project < ActiveRecord::Base
 
   STATUS = [:competition, :predesign, :sechematic_design, :design_devlopment, :final_design, :building, :built]
   COMMISSION = [:public, :private]
+
+  default_scope order: "code dESC"
+
+  scope :published, where(published: true)
 
   class Translation
     attr_accessible :locale

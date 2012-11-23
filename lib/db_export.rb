@@ -64,6 +64,7 @@ module AiB
           gfa: format(row["pSupCons"]),
           exterior_area: format(row["pSupUrb"]),
           budget: format(row["pCost"]),
+          published: published(row["pVisInter"])
         }
         es = {
           code: format(row["pID"]),
@@ -147,6 +148,12 @@ module AiB
         val unless val.strip.empty?
       end
     end
+
+    def published val
+      val.to_i == 1 ? true : false
+    end
+
   end
+
 end
 
