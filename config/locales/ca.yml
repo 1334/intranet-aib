@@ -4,6 +4,10 @@ ca:
   #   errors:
   #     <<: *errors
   activerecord:
+    models:
+      project: Projecte
+      user: Usuari
+      entry: Entrada
     attributes:
       project: 
         code: "Codi"

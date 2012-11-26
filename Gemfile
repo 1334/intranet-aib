@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+ruby '1.9.3'
 gem 'rails', '3.2.8'
 
 # Bundle edge Rails instead:
@@ -11,7 +12,7 @@ group :development do
   gem 'pry-stack_explorer'
 end
 
-gem 'sqlite3'
+gem 'pg'
 
 group :development, :test do
   gem 'minitest-rails'
