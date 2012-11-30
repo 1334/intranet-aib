@@ -65,7 +65,7 @@ class ProjectsController < ApplicationController
 private
 
   def default_values(project)
-    project.started_at = Time.now.year
+    project.start_year = Time.now.year
     project
   end
 end

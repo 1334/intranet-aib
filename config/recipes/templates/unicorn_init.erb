@@ -1,0 +1,84 @@
+#!/bin/sh
+### begin init info
+# provides:          unicorn
+# required-start:    $remote_fs $syslog
+# required-stop:     $remote_fs $syslog
+# default-start:     2 3 4 5
+# default-stop:      0 1 6
+# short-description: manage unicorn server
+# description:       start, stop, restart unicorn server for a specific application.
+### end init info
+set -e
+
+# feel free to change any of the following variables for your app:
+timeout=${timeout-60}
+app_root=<%= current_path %>
+pid=<%= unicorn_pid %>
+cmd="cd <%= current_path %>; bundle exec unicorn -d -c <%= unicorn_config %> -e production"
+as_user=<%= unicorn_user %>
+set -u
+
+old_pin="$pid.oldbin"
+
+sig () {
+  test -s "$pid" && kill -$1 `cat $pid`
+}
+
+oldsig () {
+  test -s $old_pin && kill -$1 `cat $old_pin`
+}
+
+run () {
+  if [ "$(id -un)" = "$as_user" ]; then
+    eval $1
+  else
+    su -c "$1" - $as_user
+  fi
+}
+
+case "$1" in
+  start)
+sig 0 && echo >&2 "already running" && exit 0
+run "$cmd"
+;;
+stop)
+sig quit && exit 0
+echo >&2 "not running"
+;;
+force-stop)
+sig term && exit 0
+echo >&2 "not running"
+;;
+restart|reload)
+sig hup && echo reloaded ok && exit 0
+echo >&2 "couldn't reload, starting '$cmd' instead"
+run "$cmd"
+;;
+upgrade)
+if sig usr2 && sleep 2 && sig 0 && oldsig quit
+  then
+  n=$timeout
+  while test -s $old_pin && test $n -ge 0
+  do
+    printf '.' && sleep 1 && n=$(( $n - 1 ))
+  done
+  echo
+
+  if test $n -lt 0 && test -s $old_pin
+    then
+    echo >&2 "$old_pin still exists after $timeout seconds"
+    exit 1
+  fi
+  exit 0
+fi
+echo >&2 "couldn't upgrade, starting '$cmd' instead"
+run "$cmd"
+;;
+reopen-logs)
+sig usr1
+;;
+*)
+echo >&2 "usage: $0 <start|stop|restart|upgrade|force-stop|reopen-logs>"
+exit 1
+;;
+esac

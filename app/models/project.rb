@@ -8,7 +8,7 @@ class Project < ActiveRecord::Base
   
   translates :name, :description
 
-  attr_accessible :code, :name, :description, :status, :commission, :address, :city, :state, :country, :started_at, :ended_at, :gfa, :exterior_area, :budget, :published, :collaborations_attributes
+  attr_accessible :code, :name, :description, :status, :commission, :address, :city, :state, :country, :start_year, :end_year, :gfa, :exterior_area, :budget, :published, :collaborations_attributes
 
   accepts_nested_attributes_for :collaborations, reject_if: proc { |attributes| attributes['participant_name'].blank? }
   accepts_nested_attributes_for :translations
