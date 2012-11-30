@@ -212,3 +212,4 @@ DEPENDENCIES
   simple_form
   thin
   uglifier (>= 1.0.3)
+
