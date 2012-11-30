@@ -63,14 +63,6 @@ GEM
       activemodel (>= 3.0.0)
       activerecord (>= 3.0.0)
       paper_trail (~> 2)
-    growl (1.0.3)
-    guard (1.5.4)
-      listen (>= 0.4.2)
-      lumberjack (>= 1.0.2)
-      pry (>= 0.9.10)
-      thor (>= 0.14.6)
-    guard-minitest (0.5.0)
-      guard (>= 0.4)
     hike (1.2.1)
     i18n (0.6.1)
     journey (1.0.4)
@@ -81,8 +73,6 @@ GEM
     libwebsocket (0.1.7.1)
       addressable
       websocket
-    listen (0.6.0)
-    lumberjack (1.0.2)
     mail (2.4.4)
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
@@ -147,9 +137,6 @@ GEM
       rdoc (~> 3.4)
       thor (>= 0.14.6, < 2.0)
     rake (10.0.2)
-    rb-fsevent (0.9.2)
-    rb-inotify (0.8.8)
-      ffi (>= 0.5.0)
     rdoc (3.12)
       json (~> 1.4)
     rubyzip (0.9.9)
@@ -197,8 +184,6 @@ DEPENDENCIES
   coffee-rails (~> 3.2.1)
   friendly_id
   globalize3
-  growl
-  guard-minitest
   jquery-rails
   minitest-rails
   minitest-rails-capybara
@@ -210,8 +195,6 @@ DEPENDENCIES
   pry-nav
   pry-stack_explorer
   rails (= 3.2.9)
-  rb-fsevent
-  rb-inotify
   sass-rails (~> 3.2.3)
   simple_form
   thin

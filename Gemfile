@@ -19,13 +19,6 @@ group :development, :test do
   gem 'minitest-rails-capybara'
 end
 
-group :development do
-  gem 'rb-inotify', require: false 
-  gem 'rb-fsevent', require: false
-  gem 'growl', require: false if RUBY_PLATFORM.downcase.include?("darwin")
-  gem 'guard-minitest'
-end
-
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
