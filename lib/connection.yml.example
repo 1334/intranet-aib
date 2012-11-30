@@ -1,6 +1,0 @@
-# feel free to delete unnecessary ones. Defaults provided
-host: 'host here'
-user: 'user'
-password: 'password'
-port: 0000
-database: 'name'
