@@ -11,10 +11,10 @@ class User < ActiveRecord::Base
 
   def self.authenticate(name,password)
     return if password.blank?
-    user = "#{APP_CONFIG['company_name']}\\#{name}"
+    user = "#{ENV['COMPANY_NAME']}\\#{name}"
     ldap = Net::LDAP.new
-    ldap.host = "#{APP_CONFIG['ldap']['address']}"
-    ldap.port = "#{APP_CONFIG['ldap']['port']}"
+    ldap.host = "#{ENV['LDAP_ADDRESS']}"
+    ldap.port = "#{ENV['LDAP_PORT']}"
     ldap.encryption(:simple_tls)
     ldap.auth(user,password)
     if ldap.bind

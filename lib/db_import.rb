@@ -8,7 +8,7 @@ module AiB
     attr_reader :projects, :es_translations, :en_translations, :participants, :collaborations
 
     def initialize
-      params = load_yaml
+      params = load_data
       data = AiB::DBExport.new(params).fill_data
       @projects = data.projects[:ca]
       @es_translations = data.projects[:es]
@@ -17,9 +17,12 @@ module AiB
       @collaborations = data.collaborations
     end
 
-    def load_yaml
-      params = YAML.load_file('lib/connection.yml')
-      params.symbolize_keys!
+    def load_data
+      {
+        host: ENV['LDB_HOST'],
+        user: ENV['LDB_USER'],
+        password: ENV['LDB_PASSWORD']
+      }
     end
 
     def insert_data!
