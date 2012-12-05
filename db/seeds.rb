@@ -7,6 +7,10 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-require_relative '../lib/db_import'
+# require_relative '../lib/db_import'
 
-AiB::DBImport.new.insert_data!
+# AiB::DBImport.new.insert_data!
+
+[:housing, :facilities, :urbanism, :landscape].each do |category|
+  Category.create(name: category)
+end

@@ -11,7 +11,23 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121123112659) do
+ActiveRecord::Schema.define(:version => 20121205113344) do
+
+  create_table "categories", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "categorizations", :force => true do |t|
+    t.integer  "project_id"
+    t.integer  "category_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  add_index "categorizations", ["category_id"], :name => "index_categorizations_on_category_id"
+  add_index "categorizations", ["project_id"], :name => "index_categorizations_on_project_id"
 
   create_table "collaborations", :force => true do |t|
     t.integer  "project_id"

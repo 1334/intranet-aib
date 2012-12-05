@@ -3,15 +3,18 @@ class Project < ActiveRecord::Base
   has_one :diary, as: :trackable
   has_many :collaborations, dependent: :destroy
   has_many :participants, through: :collaborations
+  has_many :categorizations
+  has_many :categories , through: :categorizations
 
   friendly_id :code
   
   translates :name, :description
 
-  attr_accessible :code, :name, :description, :status, :commission, :address, :city, :state, :country, :start_year, :end_year, :gfa, :exterior_area, :budget, :published, :collaborations_attributes
+  attr_accessible :code, :name, :description, :status, :commission, :address, :city, :state, :country, :start_year, :end_year, :gfa, :exterior_area, :budget, :published, :collaborations_attributes, :category_ids
 
   accepts_nested_attributes_for :collaborations, reject_if: proc { |attributes| attributes['participant_name'].blank? }
   accepts_nested_attributes_for :translations
+  accepts_nested_attributes_for :categorizations
   
   validates :code, code_format: true, presence: true
   validates :name, presence: true

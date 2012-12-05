@@ -20,6 +20,8 @@
     <%= render 'collaboration_fields', f: cf %>
   <% end %>
 
+  <%= f.association :categories, as: :check_boxes %>
+
   <%= link_to_add_fields "Add Participant", f, :collaborations %>
 
   <div class='form-actions'>
