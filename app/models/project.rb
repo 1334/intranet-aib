@@ -1,5 +1,6 @@
 class Project < ActiveRecord::Base
   extend FriendlyId
+
   has_one :diary, as: :trackable
   has_many :collaborations, dependent: :destroy
   has_many :participants, through: :collaborations

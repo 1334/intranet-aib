@@ -1,5 +1,4 @@
 Intranet::Application.routes.draw do
-
   scope "(:locale)", locale: /#{I18n.available_locales.join("|")}/ do
     root :to => 'projects#index'
 
@@ -10,6 +9,8 @@ Intranet::Application.routes.draw do
 
     resources :users
     resources :sessions
+
+    resources :categories, only: :show
 
     resources :projects do
       resource :diary do
