@@ -13,6 +13,9 @@ Intranet::Application.routes.draw do
     resources :categories, only: :show
 
     resources :projects do
+      collection do
+        get 'published'
+      end
       resource :diary do
         resources :entries
       end

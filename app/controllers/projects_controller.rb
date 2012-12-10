@@ -2,7 +2,7 @@ class ProjectsController < ApplicationController
   # GET /projects
   # GET /projects.json
   def index
-    @projects = Project.all
+    @projects = Project.scoped
     
     respond_to do |format|
       format.html # index.html.erb
@@ -10,6 +10,10 @@ class ProjectsController < ApplicationController
     end
   end
 
+  def published
+    @projects = Project.published 
+    render :index
+  end
   # GET /projects/1
   # GET /projects/1.json
   def show
