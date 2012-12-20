@@ -37,7 +37,9 @@ module AiB
 
     def insert_projects!
       @projects.each do |project|
-        Project.create(project)
+        p = Project.new(project)
+        p.id = p.code.to_i
+        p.save
       end
     end
 
