@@ -1,0 +1,9 @@
+<%= simple_form_for @category, :html => { :class => 'form-horizontal' }, :defaults => { :input_html => { :class => 'span4'  }  } do |f| %>
+  <%= f.input :name %>
+  <%= f.association :projects, as: :check_boxes %>
+  <div class='form-actions'>
+    <%= f.button :submit, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t('helpers.links.cancel')),
+                categories_path, :class => 'btn' %>
+  </div>
+<% end %>

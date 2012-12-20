@@ -10,7 +10,7 @@ Intranet::Application.routes.draw do
     resources :users
     resources :sessions
 
-    resources :categories, only: :show
+    resources :categories
 
     resources :projects do
       collection do
