@@ -6,5 +6,7 @@ class Category < ActiveRecord::Base
 
   friendly_id :name
 
-  attr_accessible :name
+  attr_accessible :name, :project_ids
+
+  validates_presence_of :name
 end

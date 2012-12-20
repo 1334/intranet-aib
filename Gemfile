@@ -12,11 +12,13 @@ group :development do
   gem 'pry-stack_explorer'
 end
 
-gem 'pg'
+gem 'pg', group: :production
+gem 'sqlite3', group: [ :development, :test ]
 
 group :development, :test do
   gem 'minitest-rails'
   gem 'minitest-rails-capybara'
+  gem 'autotest-rails'
 end
 
 # Gems used only for assets and not required

@@ -3,7 +3,7 @@ require 'minitest_helper'
 class ProjectTest < MiniTest::Rails::ActiveSupport::TestCase
   test "valid fixture is valid" do
     project = projects(:valid)
-    assert project.valid?
+    assert project.valid?, project.inspect
   end
 
   test "it responds to given methods" do
