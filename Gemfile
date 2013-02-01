@@ -4,7 +4,6 @@ ruby '1.9.3'
 gem 'rails', '3.2.11'
 
 gem 'pg', group: :production
-gem 'sqlite3', group: [ :development, :test ]
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -21,6 +20,7 @@ group :assets do
 end
 
 group :development, :test do
+  gem 'sqlite3'
   gem 'minitest-spec-rails'
 end
 
@@ -30,6 +30,8 @@ group :development do
   gem 'pry-stack_explorer'
   gem 'capybara'
   gem 'database_cleaner'
+  gem 'better_errors'
+  gem 'binding_of_caller'
 end
 
 gem 'jquery-rails'
@@ -54,7 +56,7 @@ gem 'net-ldap'
 gem 'friendly_id'
 gem 'paperclip'
 gem 'globalize3'
-# gem 'mysql2', require: false
+gem 'mysql2', require: false
 
 group :production do
   gem 'thin'
