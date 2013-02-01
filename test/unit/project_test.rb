@@ -1,8 +1,8 @@
 require 'test_helper'
 
 class ProjectTest < ActiveSupport::TestCase
-  test "valid fixture is valid" do
-    project = projects(:valid)
+  test "factiry is valid" do
+    project = FactoryGirl.build(:project)
     assert project.valid?, project.errors.messages
   end
 

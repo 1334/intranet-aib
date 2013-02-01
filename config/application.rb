@@ -62,5 +62,9 @@ module Intranet
 
     # Heroku requires this to be false
     config.assets.initialize_on_precompile=false
+    
+    config.generators do |g|
+      g.fixture_replacement :factory_girl
+    end
   end
 end

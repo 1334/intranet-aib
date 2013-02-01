@@ -22,6 +22,7 @@ end
 group :development, :test do
   gem 'sqlite3'
   gem 'minitest-spec-rails'
+  gem 'factory_girl_rails'
 end
 
 group :development do
