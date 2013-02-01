@@ -3,23 +3,8 @@ source 'https://rubygems.org'
 ruby '1.9.3'
 gem 'rails', '3.2.11'
 
-# Bundle edge Rails instead:
-# gem 'rails', :git => 'git://github.com/rails/rails.git'
-
-group :development do
-  gem 'pry'
-  gem 'pry-nav'
-  gem 'pry-stack_explorer'
-end
-
 gem 'pg', group: :production
 gem 'sqlite3', group: [ :development, :test ]
-
-group :development, :test do
-  gem 'minitest-rails'
-  gem 'minitest-rails-capybara'
-  gem 'autotest-rails'
-end
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -33,6 +18,18 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 
   gem 'bootstrap-sass'
+end
+
+group :development, :test do
+  gem 'minitest-spec-rails'
+end
+
+group :development do
+  gem 'pry'
+  gem 'pry-nav'
+  gem 'pry-stack_explorer'
+  gem 'capybara'
+  gem 'database_cleaner'
 end
 
 gem 'jquery-rails'
@@ -57,7 +54,7 @@ gem 'net-ldap'
 gem 'friendly_id'
 gem 'paperclip'
 gem 'globalize3'
-gem 'mysql2', require: false
+# gem 'mysql2', require: false
 
 group :production do
   gem 'thin'
