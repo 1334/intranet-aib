@@ -1,6 +1,6 @@
-require "minitest_helper"
+require "test_helper"
 
-class TimesheetTest < MiniTest::Rails::ActiveSupport::TestCase
+class TimesheetTest < ActiveSupport::TestCase
   test "valid fixture is valid" do
     assert timesheets(:valid).valid?
   end

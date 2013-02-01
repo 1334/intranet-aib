@@ -1,6 +1,6 @@
-require "minitest_helper"
+require "test_helper"
 
-class CategorizationTest < MiniTest::Rails::ActiveSupport::TestCase
+class CategorizationTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

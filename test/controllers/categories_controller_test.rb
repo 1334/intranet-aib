@@ -1,6 +1,6 @@
-require "minitest_helper"
+require "test_helper"
 
-class CategoriesControllerTest < MiniTest::Rails::ActionController::TestCase
+class CategoriesControllerTest < ActionController::TestCase
   test "should get show" do
     get :show
     assert_response :success

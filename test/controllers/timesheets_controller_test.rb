@@ -1,6 +1,6 @@
-require "minitest_helper"
+require "test_helper"
 
-class TimesheetsControllerTest < MiniTest::Rails::ActionController::TestCase
+class TimesheetsControllerTest < ActionController::TestCase
 
 #   before do
 #     @timesheet = Timesheet.new

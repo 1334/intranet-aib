@@ -1,6 +1,6 @@
-require "minitest_helper"
+require "test_helper"
 
-class TimesheetsHelperTest < MiniTest::Rails::ActionView::TestCase
+class TimesheetsHelperTest < ActionView::TestCase
 
   def test_sanity
     flunk "Need real tests"
