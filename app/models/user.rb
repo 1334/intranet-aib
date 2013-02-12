@@ -10,7 +10,7 @@ class User < ActiveRecord::Base
   end
 
   def self.authenticate(name,password)
-    return if password.blank?
+    return false if password.blank?
     user = "#{ENV['COMPANY_NAME']}\\#{name}"
     ldap = Net::LDAP.new
     ldap.host = "#{ENV['LDAP_ADDRESS']}"
