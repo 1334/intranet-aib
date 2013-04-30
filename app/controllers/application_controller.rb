@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
 
-  before_filter :authorize, except: [:login, :index, :show]
+  before_filter :authorize, except: :login
   before_filter :set_locale
 
   private
