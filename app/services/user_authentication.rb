@@ -1,3 +1,5 @@
+require 'net/ldap'
+
 class UserAuthentication
   def self.authenticate(name,password)
     return false if password.blank?
@@ -7,10 +9,6 @@ class UserAuthentication
     ldap.port = "#{ENV['LDAP_PORT']}"
     ldap.encryption(:simple_tls)
     ldap.auth(user,password)
-    if ldap.bind
-      User.find_by_name(name) || User.create(name: name, email: "#{name}@aib.cat")
-    else
-      false
-    end
+    ldap.bind
   end
 end

@@ -53,7 +53,7 @@ gem 'jquery-rails'
 # gem 'ruby-debug19', :require => 'ruby-debug'
 
 gem 'simple_form'
-gem 'net-ldap'
+gem 'net-ldap', require: false
 gem 'friendly_id'
 gem 'paperclip'
 gem 'globalize3'

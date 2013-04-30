@@ -12,6 +12,7 @@ class LoginTest < ActionDispatch::IntegrationTest
     click_link "Log In"
     fill_in :name, with: 'testuser'
     fill_in :password, with: 'testpass'
+    click_button "Log In"
     assert_equal root_path, current_path
     assert page.has_content?('successfully logged in')
   end
