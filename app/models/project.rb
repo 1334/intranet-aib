@@ -1,14 +1,10 @@
 class Project < ActiveRecord::Base
-  extend FriendlyId
-
   has_one :diary, as: :trackable
   has_many :collaborations, dependent: :destroy
   has_many :participants, through: :collaborations
   has_many :categorizations
   has_many :categories , through: :categorizations
 
-  friendly_id :code
-  
   translates :name, :description
 
   attr_accessible :code, :name, :description, :status, :commission, :address, :city, :state, :country, :start_year, :end_year, :gfa, :exterior_area, :budget, :published, :collaborations_attributes, :category_ids
@@ -31,5 +27,8 @@ class Project < ActiveRecord::Base
     attr_accessible :locale
   end
 
+  def to_param
+    code
+  end
 end
 

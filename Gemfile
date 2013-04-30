@@ -54,7 +54,6 @@ gem 'jquery-rails'
 
 gem 'simple_form'
 gem 'net-ldap', require: false
-gem 'friendly_id'
 gem 'paperclip'
 gem 'globalize3'
 gem 'mysql2', require: false

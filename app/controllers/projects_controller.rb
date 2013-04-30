@@ -1,4 +1,5 @@
 class ProjectsController < ApplicationController
+  before_filter :find_project, only: [:show, :edit, :update, :destroy]
   # GET /projects
   # GET /projects.json
   def index
@@ -17,8 +18,6 @@ class ProjectsController < ApplicationController
   # GET /projects/1
   # GET /projects/1.json
   def show
-    @project = Project.find(params[:id])
-
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @project.to_json(include: { collaborations: { include: :participant } } ) }
@@ -44,13 +43,10 @@ class ProjectsController < ApplicationController
 
   # GET /projects/1/edit
   def edit
-    @project = Project.find(params[:id])
   end
 
   # PUT /projects/1
   def update
-    @project = Project.find(params[:id])
-
     if @project.update_attributes(params[:project])
       redirect_to @project, notice: 'Project was successfully updated.'
     else
@@ -60,7 +56,6 @@ class ProjectsController < ApplicationController
 
   # DELETE /projects/1
   def destroy
-    @project = Project.find(params[:id])
     @project.destroy
 
     redirect_to projects_url
@@ -71,5 +66,9 @@ private
   def default_values(project)
     project.start_year = Time.now.year
     project
+  end
+
+  def find_project
+    @project ||= Project.find_by_code params[:id]
   end
 end
